@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: php-actions/composer@v5
+        with:
+          php_version: 8.0
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v3
@@ -18,4 +20,5 @@ jobs:
         with:
           bootstrap: vendor/autoload.php
           configuration: test/phpunit.xml
+          php_version: 8.0
           args: --coverage-text
