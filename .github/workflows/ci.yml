@@ -10,12 +10,15 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: php-actions/composer@v5
+        with:
+          php_version: "8.0"
 
       - name: PHPUnit Tests
-        uses: php-actions/phpunit@v2
+        uses: php-actions/phpunit@v3
         env:
           TEST_NAME: Scarlett
         with:
           bootstrap: vendor/autoload.php
           configuration: test/phpunit.xml
           args: --coverage-text
+          php_version: "8.0"
